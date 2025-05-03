@@ -56,19 +56,25 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4">
-      <Card className="w-full max-w-3xl shadow-lg">
-        <CardContent className="p-0">
-          <ActionBar onNewNote={handleNewNote} noteUrl={getNoteUrl()} />
-          <NoteEditor
-            initialContent={note}
-            noteId={noteId ?? ""}
-            onContentChange={handleNoteChange}
-          />
-        </CardContent>
-      </Card>
+    <div>
+      <h1 style={{ color: "black", fontSize: 24 }}>🚀 It Works!</h1>
     </div>
   );
+  
+//   return (
+//     <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4">
+//       <Card className="w-full max-w-3xl shadow-lg">
+//         <CardContent className="p-0">
+//           <ActionBar onNewNote={handleNewNote} noteUrl={getNoteUrl()} />
+//           <NoteEditor
+//             initialContent={note}
+//             noteId={noteId ?? ""}
+//             onContentChange={handleNoteChange}
+//           />
+//         </CardContent>
+//       </Card>
+//     </div>
+//   );
 };
 
 export default Home;
