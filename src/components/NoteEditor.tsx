@@ -74,12 +74,12 @@ const NoteEditor = ({
   return (
     <div className="relative w-full max-w-3xl mx-auto bg-background rounded-md shadow-sm border border-border p-4">
       <Textarea
-        ref={textareaRef}
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-        placeholder="Start typing your note here..."
-        className="w-full min-h-[200px] resize-none border-none focus-visible:ring-0 focus-visible:ring-offset-0 text-base leading-relaxed"
-      />
+  ref={textareaRef}
+  value={content}
+  onChange={handleChange}
+  placeholder="Start typing your note here..."
+  className="w-full min-h-[160px] text-base resize-none border rounded-md focus:outline-none focus:ring-1 focus:ring-gray-300 p-3"
+/>
 
       {saveStatus !== "idle" && (
         <div className="absolute bottom-4 right-4">
