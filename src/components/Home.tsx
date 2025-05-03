@@ -47,19 +47,31 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4">
-      <Card className="w-full max-w-3xl shadow-lg">
-        <CardContent className="p-0">
-          <ActionBar onNewNote={handleNewNote} noteUrl={getNoteUrl()} />
-          <NoteEditor
-            initialContent={note}
-            noteId={noteId ?? ""}
-            onContentChange={handleNoteChange}
-          />
-        </CardContent>
-      </Card>
+  <div className="min-h-screen bg-white flex items-center justify-center px-4 py-12">
+    <div className="w-full max-w-2xl rounded-xl shadow-xl border bg-white">
+      <div className="flex items-center justify-between border-b px-4 py-3">
+        <button
+          onClick={handleNewNote}
+          className="flex items-center text-sm px-3 py-1.5 border rounded hover:bg-gray-100"
+        >
+          <span className="text-base font-medium">＋ New Note</span>
+        </button>
+        <button
+          onClick={() => navigator.clipboard.writeText(getNoteUrl())}
+          className="flex items-center text-sm text-gray-700 hover:text-black"
+        >
+          📋 Copy URL
+        </button>
+      </div>
+      <div className="px-4 py-3">
+        <NoteEditor
+          initialContent={note}
+          onContentChange={handleNoteChange}
+        />
+      </div>
     </div>
-  );
+  </div>
+);
 };
 
 export default Home;
