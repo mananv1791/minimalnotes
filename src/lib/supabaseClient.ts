@@ -1,7 +1,11 @@
 import { createClient } from "@supabase/supabase-js";
 
-// ✅ CRA uses process.env, not import.meta.env
+// ✅ CRA-compatible environment variable access
 const supabaseUrl = process.env.REACT_APP_SUPABASE_URL!;
 const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY!;
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error("Missing Supabase environment variables.");
+}
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
